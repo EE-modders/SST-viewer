@@ -11,9 +11,9 @@ import lib
 import importlib
 import webbrowser
 from io import BytesIO
-from lib.SST import SST as EEsst
-from lib.TGA import TGA
-from lib.DDS import DDSReader
+from lib.src.lib.SST import SST as EEsst
+from lib.src.lib.TGA import TGA
+from lib.src.lib.DDS import DDSReader
 
 importlib.reload(lib)
 
