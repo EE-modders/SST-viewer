@@ -1,0 +1,9 @@
+.directory
+bin/
+src/test.py
+
+__*
+
+*.desktop
+*.dist
+*.build
