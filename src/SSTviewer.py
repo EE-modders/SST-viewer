@@ -46,8 +46,8 @@ def show_about():
     info += "SST Viewer for Empire Earth made by zocker_160\n"
     info += "version %s" % version
     info += "\n"
-    info += "if you have any issue, pls feel free to report it:"
-    info += "https://github.com/EE-modders/SST-tool/issues"
+    info += "if you have any issue, pls feel free to report it:\n"
+    info += "https://github.com/EE-modders/SST-viewer/issues"
     info += "\n"
     info += "----------------------------------------------\n"
     info += "\n"
@@ -62,7 +62,7 @@ def show_about():
     messagebox.showinfo("SSTviewer for Empire Earth", info)    
 
 def show_help():
-    webbrowser.open_new_tab("https://github.com")
+    webbrowser.open_new_tab("https://github.com/EE-modders/Empire-Earth-toolbox")
 
 def select_file():
     filename = askopenfilename(
