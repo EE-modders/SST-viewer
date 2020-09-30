@@ -24,7 +24,7 @@ from tkinter.filedialog import askopenfilename
 from PIL import Image, ImageTk
 
 
-version = "0.5"
+version = "0.5.1"
 
 # if image has multiple resolutions, then only show the first 3
 tile_show_limit = 5
