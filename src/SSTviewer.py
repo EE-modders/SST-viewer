@@ -27,7 +27,7 @@ from PIL import Image, ImageTk
 version = "0.5.2"
 
 # if image has multiple resolutions, then only show the first few
-tile_show_limit = 5
+tile_show_limit = 3
 
 ### setup GUI window
 window = GUI.Tk()
