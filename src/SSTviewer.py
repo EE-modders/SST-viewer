@@ -24,9 +24,9 @@ from tkinter.filedialog import askopenfilename
 from PIL import Image, ImageTk
 
 
-version = "0.5.1"
+version = "0.5.2"
 
-# if image has multiple resolutions, then only show the first 3
+# if image has multiple resolutions, then only show the first few
 tile_show_limit = 5
 
 ### setup GUI window
@@ -85,27 +85,34 @@ def load_image(filename: str):
 
     if SST.header["resolutions"] > 1: Imageparts = Imageparts[:tile_show_limit]
 
-    ww = max(SST.header["x-res"] * 1.05, 450)
-    wh = SST.header["y-res"] * max(SST.header["tiles"], min(SST.header["resolutions"], tile_show_limit)) * 1.3
-    width = SST.header["x-res"]
-    height = SST.header["y-res"]
-    xLen, yLen, xPos, yPos = calc_winsize(xLen=ww, yLen=wh)
+    #ww = max(SST.header["x-res"] * 1.05, 450)
+    #wh = SST.header["y-res"] * max(SST.header["tiles"], min(SST.header["resolutions"], tile_show_limit)) * 1.3
+    #width = SST.header["x-res"]
+    #height = SST.header["y-res"]
+    #xLen, yLen, xPos, yPos = calc_winsize(xLen=ww, yLen=wh)
 
     #window.geometry("%dx%d+%d+%d" % (xLen, yLen, xPos, yPos)) # TODO make window resize more optimized
 
     for i, IMGpart in enumerate(Imageparts):
         image_normal = Image.open(BytesIO(IMGpart))        
-        #load = load.resize((width, height))
         image_alpha = image_normal.split()[-1]
+
+        imgWidth, imgHeight = image_normal.width, image_normal.height
+
+        # scale images size to 256x256
+        image_normal = image_normal.resize((256, 256), Image.NONE)
+        image_alpha = image_alpha.resize((256, 256), Image.NEAREST)
+
         render = ImageTk.PhotoImage(image_normal)
         a_render = ImageTk.PhotoImage(image_alpha)
         print(render)
+
         panels[i].configure(image=render, bd=5, relief="ridge")
         panels[i].image = render
         a_panels[i].configure(image=a_render, bd=5, relief="ridge")
         a_panels[i].image = a_render
 
-        descr[i].configure(text="%dx%d" % (render.width(), render.height()))
+        descr[i].configure(text="%dx%d" % (imgWidth, imgHeight))
         a_descr[i].configure(text="alpha mask")
         #panel = GUI.Label(window, image=ImageTk.PhotoImage(load), text="PAACKIT")
         #panel.grid(row=i)
