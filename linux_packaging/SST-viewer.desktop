@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=SST-viewer
+Version=1.0
+Exec=SSTviewer %f
+Comment=SST image viewer for Empire Earth
+Type=Application
+Terminal=false
+StartupNotify=true
+Encoding=UTF-8
+Categories=Viewer;Utility;
+Icon=sstviewer
