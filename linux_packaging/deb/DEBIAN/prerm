@@ -1,4 +1,4 @@
 #! /bin/bash -e
 
 rm -f "/usr/bin/SSTviewer"
-rm -rf /usr/lib/SSTviewer/*.pyc
+find /usr/lib/SSTviewer -type f -iname \*.pyc -delete

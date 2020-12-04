@@ -9,6 +9,7 @@ Architecture: all
 Priority: optional
 Suggests: gdebi | gdebi-kde
 Depends: python3 (>=3.5), python3-tk, python3-pip
+Conflicts: python3-pil
 Description: SST Viewer for Empire Earth
  SST Viewer for Empire Earth made by zocker_160 allows you to view .sst images without the need to convert them to TGA first.
 
@@ -735,6 +736,7 @@ Name=SST-viewer
 Version=1.0
 Exec=SSTviewer %f
 Comment=SST image viewer for Empire Earth
+Icon=sstviewer
 Type=Application
 Terminal=false
 StartupNotify=true
