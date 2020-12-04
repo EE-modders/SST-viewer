@@ -9,3 +9,4 @@ Terminal=false
 StartupNotify=true
 Encoding=UTF-8
 Categories=Viewer;Utility;
+MimeType=image/sst;
