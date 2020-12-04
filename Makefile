@@ -16,4 +16,7 @@ deb:
 	rm -rf linux_packaging/deb/usr/lib/SSTviewer/lib/doc
 	rm -rf linux_packaging/deb/usr/lib/SSTviewer/lib/src/testing
 	
+	# fix permissions
+	chmod -R 775 linux_packaging/deb
+	
 	dpkg-deb --build linux_packaging/deb SSTviewer_0.5.2_20.04.deb
