@@ -29,3 +29,12 @@ jobs:
       
     - name: compile SSTviewer
       run: pyinstaller -F --noconsole ./src/SSTviewer.py
+
+    - name: create DEB
+      run: make
+
+    - name: save SSTviewer deb
+      uses: actions/upload-artifact@master
+      with:
+        name: SSTviewer_Linux_deb
+        path: .

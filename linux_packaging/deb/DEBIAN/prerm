@@ -1,0 +1,4 @@
+#! /bin/bash -e
+
+rm -f "/usr/bin/SSTviewer"
+rm -rf /usr/lib/SSTviewer/*.pyc

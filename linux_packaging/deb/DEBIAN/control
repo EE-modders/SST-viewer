@@ -1,0 +1,11 @@
+Package: SSTviewer
+Version: 0.5.2
+Maintainer: zocker_160 <zocker1600@posteo.net>
+Section: Utility
+Homepage: https://github.com/EE-modders/SST-viewer
+Architecture: all
+Priority: optional
+Suggests: gdebi | gdebi-kde
+Depends: python3 (>=3.5), python3-pil, python3-tk
+Description: SST Viewer for Empire Earth
+ SST Viewer for Empire Earth made by zocker_160 allows you to view .sst images without the need to convert them to TGA first.
