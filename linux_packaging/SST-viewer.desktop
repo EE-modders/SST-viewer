@@ -8,5 +8,5 @@ Type=Application
 Terminal=false
 StartupNotify=true
 Encoding=UTF-8
-Categories=Viewer;Utility;
+Categories=Graphics;
 MimeType=image/sst;
