@@ -23,7 +23,6 @@ from tkinter import messagebox
 from tkinter.filedialog import askopenfilename
 from PIL import Image, ImageTk
 
-
 version = "0.5.2"
 
 # if image has multiple resolutions, then only show the first few
@@ -94,7 +93,7 @@ def load_image(filename: str):
     #window.geometry("%dx%d+%d+%d" % (xLen, yLen, xPos, yPos)) # TODO make window resize more optimized
 
     for i, IMGpart in enumerate(Imageparts):
-        image_normal = Image.open(BytesIO(IMGpart))        
+        image_normal = Image.open(BytesIO(IMGpart))
         image_alpha = image_normal.split()[-1]
 
         imgWidth, imgHeight = image_normal.width, image_normal.height
